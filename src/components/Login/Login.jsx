@@ -1,24 +1,21 @@
 import React from "react";
+import axios from 'axios';
 import useForm from "../CustomForm/CustomForm";
 
 const LoginForm = () => {
-    const { formValues, handleChange, handleSubmit } = userForm(login);
-    const API_URL = "http://localhost:8080/api/auth/";
-    
-    const login = (formValues) => {
-        return axios
-          .post(API_URL + "login", {
-            username,
-            password,
-          })
-          .then((response) => {
-            if (response.data.accessToken) {
-              localStorage.setItem("user", JSON.stringify(response.data));
-            }
-      
-            return response.data;
-          });
-      };
+    const { formValues, handleChange, handleSubmit } = useForm(loginUser);
+
+    async function loginUser(){
+        try{
+            let response = await axios.post("http://127.0.0.1:8000/api/auth/login/", formValues);
+            console.log(response);
+            alert("You're logged in!");
+            localStorage.setItem("token", response.data.access);
+        }
+        catch{
+            console.log("Unsuccess");
+        }
+    }
 
     return (
         <div>
@@ -27,19 +24,23 @@ const LoginForm = () => {
                     <label>
                         Username:
                         <div>
-                            <input input type='text' name='username' onChange={handleChnage} value={formValues.username} required={true}/>
+                            <input type='text' name='username' onChange={handleChange} value={formValues.username} required={true}/>
                         </div>
                     </label>
                 </div>
                 <div>
                     <label>
-                        Username:
+                        Password:
                         <div>
-                            <input input type='text' name='username' onChange={handleChnage} value={formValues.username} required={true}/>
+                            <input type='password' name='password' onChange={handleChange} value={formValues.password} required={true}/>
                         </div>
                     </label>
+                </div>
+                <div>
+                    <button type="submit" className="btn">Login</button>
                 </div>
             </form>
         </div>
     )
 }
+export default LoginForm;
