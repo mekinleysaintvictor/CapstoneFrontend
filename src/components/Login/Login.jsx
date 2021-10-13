@@ -13,6 +13,7 @@ const LoginForm = () => {
             console.log(response);
             alert("You're logged in!");
             localStorage.setItem("token", response.data.access);
+            window.location = '/';
         }
         catch{
             console.log("Unsuccess");

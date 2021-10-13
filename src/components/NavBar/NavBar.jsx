@@ -14,7 +14,7 @@ const NavBar = ({ user }) => {
                     </div>
                     <div>
                         <li>
-                        <Link to="/">Profile</Link> 
+                        <Link to="/profile">Profile</Link> 
                         </li>
                     </div>
                     {!user && 

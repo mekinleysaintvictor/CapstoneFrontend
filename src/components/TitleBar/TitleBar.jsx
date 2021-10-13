@@ -5,6 +5,7 @@ function TitleBar () {
 
     async function logoutUser(){
         localStorage.removeItem("token");
+        window.location = '/';
     }
 
     return(
