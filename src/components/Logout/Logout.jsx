@@ -8,7 +8,7 @@ const Logout = () => {
 
     return (
         <div>
-
+            <button onClick={logoutUser}>LogoutComp</button>
         </div>
     )
 }
