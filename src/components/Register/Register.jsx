@@ -2,9 +2,11 @@ import React from "react";
 import useForm from "../CustomForm/CustomForm";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 const RegisterForm = () => {
     const { formValues, handleChange, handleSubmit } = useForm(register);
+    const history = useHistory();
 
     function register(){
         alert(`Thanks for registering ${formValues.username}!`);
@@ -19,6 +21,10 @@ const RegisterForm = () => {
         catch{
             console.log("Unsuccess");
         }
+    }
+
+    const handleRoute = () => {
+        history.push("/login");
     }
 
     return (
@@ -74,8 +80,11 @@ const RegisterForm = () => {
                 </div>
                 <div>
                     <div>
-                        <button type="submit" className="btn">Register!</button>
+                        <button type="submit" className="btn">Register</button>
                     </div>
+                </div>
+                <div>
+                    <button className="btn" onClick={handleRoute}>Cancel</button>
                 </div>
             </form>
         </div>

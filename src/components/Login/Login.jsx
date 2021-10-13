@@ -1,9 +1,11 @@
 import React from "react";
 import axios from 'axios';
 import useForm from "../CustomForm/CustomForm";
+import { useHistory } from "react-router";
 
 const LoginForm = () => {
     const { formValues, handleChange, handleSubmit } = useForm(loginUser);
+    const history = useHistory();
 
     async function loginUser(){
         try{
@@ -15,6 +17,10 @@ const LoginForm = () => {
         catch{
             console.log("Unsuccess");
         }
+    }
+
+    const handleRoute = () => {
+        history.push("/register");
     }
 
     return (
@@ -38,6 +44,9 @@ const LoginForm = () => {
                 </div>
                 <div>
                     <button type="submit" className="btn">Login</button>
+                </div>
+                <div>
+                    <button className="btn" onClick={handleRoute}>Register</button>
                 </div>
             </form>
         </div>
