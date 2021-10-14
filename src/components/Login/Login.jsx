@@ -13,9 +13,11 @@ const LoginForm = () => {
             console.log(response);
             alert("You're logged in!");
             localStorage.setItem("token", response.data.access);
+            localStorage.setItem("refreshToken", response.data.refresh);
             window.location = '/';
         }
         catch{
+            alert("Username or Password does not match.")
             console.log("Unsuccess");
         }
     }

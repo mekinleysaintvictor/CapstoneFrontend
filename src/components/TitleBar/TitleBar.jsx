@@ -13,7 +13,7 @@ function TitleBar () {
             <body>
                 <div>
                     <h1> Mushroom Mood </h1>
-                    <button className="btn" onClick={logoutUser}>Logout</button>
+                    {/* <button className="btn" onClick={logoutUser}>Logout</button> */}
                 </div>
             </body>
         </div>
