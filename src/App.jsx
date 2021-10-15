@@ -8,11 +8,11 @@ import { Route, Switch } from 'react-router';
 import NavBar from './components/NavBar/NavBar';
 import Logout from './components/Logout/Logout';
 import axios from 'axios';
-import Profile from './components/Profile/Profile';
 import Search from './components/Search/Search';
 import jwtDecode from 'jwt-decode';
 import { Component } from 'react';
 import ProfilePage from './components/Profile/Profile';
+import EditProfile from './components/EditProfile/EditProfile';
 
 class App extends Component {
   state = { }
@@ -27,11 +27,11 @@ class App extends Component {
 
     }catch{
 
-      // const refreshToken = localStorage.getItem("refreshToken");
-      // let response = axios.post("http://127.0.0.1:8000/api/auth/login/refresh", refreshToken);
-      // console.log("Refresh", response);
-      // const user = jwtDecode(response);
-      // this.setState( { user });
+      const refreshToken = localStorage.getItem("refreshToken");
+      const response = axios.post("http://127.0.0.1:8000/api/auth/login/refresh", refreshToken);
+      console.log("Refresh", response);
+      const user = jwtDecode(response.access);
+      this.setState( { user });
     }
   }
 
@@ -50,6 +50,14 @@ class App extends Component {
                   return <Redirect to="/login"/>
                 } else {
                   return <ProfilePage {...props} user={user}/>
+                }
+              }}       
+              />
+              <Route path="/editprofile" render={props => {
+                if(!user){
+                  return <Redirect to="/login"/>
+                } else {
+                  return <EditProfile {...props} user={user}/>
                 }
               }}       
               />           

@@ -8,7 +8,7 @@ const NavBar = ({ user }) => {
 
     return (
         <div>
-            {user && <h4> Welcome {user.username}</h4>}
+            {user && <h4> Time 2 Groove </h4>}
             <div>
                 <ul>
                     <div>
@@ -45,6 +45,11 @@ const NavBar = ({ user }) => {
                             <div>
                                 <li>
                                     <Link to="/search">Search</Link>
+                                </li>
+                            </div>
+                            <div>
+                                <li>
+                                    <Link to="/editprofile">Edit</Link>
                                 </li>
                             </div>
                         </React.Fragment>

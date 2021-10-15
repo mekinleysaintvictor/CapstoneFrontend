@@ -16,10 +16,17 @@ const ProfilePage = (props) => {
     }, []);
 
     async function getUserProfile(){
-        const jwt = localStorage.getItem("token");
-        const response = await axios.get('http://127.0.0.1:8000/api/musicians/', { headers: {Authorization: 'Bearer ' + jwt}});
-        console.log("GetuserProfile", response.data[0]);
-        setUserProfile(response.data[0]);
+        const refresh = localStorage.getItem("refreshToken");
+        console.log("Refresh:", refresh);   
+        const response = await axios.post("http://127.0.0.1:8000/api/auth/login/refresh/", {refresh: refresh});
+        const jwt = (response.data.access);
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/api/musicians/', { headers: {Authorization: 'Bearer ' + jwt}});
+            console.log("GetuserProfile", response.data[0]);
+            setUserProfile(response.data[0]);
+        }catch{
+
+        }
     }
 
     async function getUser(){
@@ -44,19 +51,19 @@ const ProfilePage = (props) => {
         <div className="title-bar">
             <body>
                 <div>
-                    <h1> {user.first_name} Page </h1>
+                    <h1> Welcome to {user.first_name}'s Profile </h1>
                 </div>
                 <div>
-                    <h2> About me {userProfile.aboutme} </h2>
+                    <h2> About me: {userProfile.aboutMe} </h2>
                 </div>
                 <div>
-                    <h2> Genres I like! {userProfile.genres} </h2>
+                    <h2> Genres I like: {userProfile.genres} </h2>
                 </div>
                 <div>
-                    <h2> Instrments I play {userProfile.instruments} </h2>
+                    <h2> Instrments I play: {userProfile.instruments} </h2>
                 </div>
                 <div>
-                    <h2> My influences {userProfile.influences} </h2>
+                    <h2> My influences: {userProfile.influences} </h2>
                 </div>
             </body>
             <div>
