@@ -1,6 +1,7 @@
 import React from "react";
 import useForm from "../CustomForm/CustomForm";
 import axios from "axios";
+import jwtDecode from 'jwt-decode'; //added here for invalid token specified
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
@@ -20,7 +21,7 @@ const EditProfile = () => {
         try{
             let response = await axios.put("http://127.0.0.1:8000/api/musicians/", formValues, { headers: {Authorization: 'Bearer ' + jwt}});
             console.log("Response data: ", response);
-            alert(`Profile has been edited!`);
+            alert(`Profile has been updated!`);
             window.location = '/';
         }
         catch{
@@ -64,7 +65,7 @@ const EditProfile = () => {
                     <label>
                         Genres:
                         <div>
-                            <input type='text' name='genre' onChange={handleChange} value={formValues.genre} required={false}/>
+                            <input type='text' name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
                         </div>                        
                     </label>
                 </div>

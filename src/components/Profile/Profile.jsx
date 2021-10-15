@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import VideoPlayer from "../MusicVideo/MusicVideo";
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 const ProfilePage = (props) => {
 

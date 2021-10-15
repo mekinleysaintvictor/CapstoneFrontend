@@ -4,6 +4,7 @@ const Logout = () => {
 
     async function logoutUser(){
         localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
         window.location = '/';
     }
 

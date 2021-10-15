@@ -13,6 +13,7 @@ import jwtDecode from 'jwt-decode';
 import { Component } from 'react';
 import ProfilePage from './components/Profile/Profile';
 import EditProfile from './components/EditProfile/EditProfile';
+import Musician from './components/Musician/Musician';
 
 class App extends Component {
   state = { }
@@ -27,11 +28,6 @@ class App extends Component {
 
     }catch{
 
-      const refreshToken = localStorage.getItem("refreshToken");
-      const response = axios.post("http://127.0.0.1:8000/api/auth/login/refresh", refreshToken);
-      console.log("Refresh", response);
-      const user = jwtDecode(response.access);
-      this.setState( { user });
     }
   }
 
@@ -65,6 +61,7 @@ class App extends Component {
               <Route path="/login" component={Login}/>
               <Route path="/logout" component={Logout}/>
               <Route path="/search" component={Search}/>
+              <Route path="/page/:id" component={Musician}/>
               <Route path="/" exact component={HomePage}/>
             </Switch>
           </div>
