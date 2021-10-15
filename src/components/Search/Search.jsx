@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from "react-router";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import axios from 'axios';
 
 const Search = () => {
     const [musicians, setMusicians] = useState([]);                                     //[APIData, setAPIData]
     const [filteredMusicians, setFilteredMusicians] = useState([]);                     //[filteredResults]
-    const [searchInput, setSearchInput] = useState('');                                 //[searchInput, setSearchInput]
+    const [searchInput, setSearchInput] = useState('');     
+    const history = useHistory();                            //[searchInput, setSearchInput]
 
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/musicians/all/")
@@ -13,15 +16,6 @@ const Search = () => {
                 console.log(response);
         })
     }, [])
-
-    // const searchItems = (searchValue) => {
-    //     setSearchInput(searchValue);
-    //     console.log(searchValue);
-    //     musicians.filter((item) => {
-    //         return Object.values(item).join('').toLowerCase.includes(searchInput.toLowerCase());
-    //     })
-    //     setFilteredMusicians(filteredData);
-    // }
 
     const searchItems = (searchValue) => {
         setSearchInput(searchValue);
@@ -36,9 +30,9 @@ const Search = () => {
         }
     }
 
-    // const filteredData = musicians.filter((item) => {
-    //     return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase());
-    // })
+    const handleRoute = () => {
+        history.push(`/page:id/`);
+    }
 
     return(
         <React.Fragment>
@@ -62,7 +56,8 @@ const Search = () => {
                                     <td>{item.aboutMe}</td>
                                     <td>{item.genres}</td>
                                     <td>{item.influences}</td>
-                                    <td>{item.instruments}</td>                                
+                                    <td>{item.instruments}</td>  
+                                    <Link to={`/page/${item.id}`}>Details</Link>                              
                                 </tr>
                             )
                         })
@@ -73,7 +68,8 @@ const Search = () => {
                                     <td>{item.aboutMe}</td>
                                     <td>{item.genres}</td>
                                     <td>{item.influences}</td>
-                                    <td>{item.instruments}</td>                            
+                                    <td>{item.instruments}</td>
+                                    <Link to={`/page/${item.id}`}>Details</Link>                            
                                 </tr> 
                             )
                         })
