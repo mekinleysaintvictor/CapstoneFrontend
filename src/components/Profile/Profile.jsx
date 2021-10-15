@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import VideoPlayer from "../MusicVideo/MusicVideo";
 import axios from 'axios';
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
 
     const [user, setUser] = useState({});
-    const [userProfile, setUserProfile] = useState({}); //contains aboutMe, genres, influences, instruments
+    const [userProfile, setUserProfile] = useState({}); //contains, aboutMe, genres, influences, instruments
 
     useEffect(() => {
         getUserProfile();
@@ -17,15 +18,22 @@ const ProfilePage = () => {
     async function getUserProfile(){
         const jwt = localStorage.getItem("token");
         const response = await axios.get('http://127.0.0.1:8000/api/musicians/', { headers: {Authorization: 'Bearer ' + jwt}});
-        console.log("GetuserProfile", response.data);
-        setUserProfile(response.data);
+        console.log("GetuserProfile", response.data[0]);
+        setUserProfile(response.data[0]);
     }
 
     async function getUser(){
-        const jwt = localStorage.getItem("token");
-        const response = await axios.get('http://127.0.0.1:8000/api/musicians/user/', { headers: {Authorization: 'Bearer ' + jwt}});
-        console.log("Getuser", response.data);
-        setUser(response.data);
+        const refresh = localStorage.getItem("refreshToken");
+        console.log("Refresh:", refresh);   
+        const response = await axios.post("http://127.0.0.1:8000/api/auth/login/refresh/", {refresh: refresh});
+        const jwt = (response.data.access);
+        try{
+            const response = await axios.get('http://127.0.0.1:8000/api/musicians/user/', { headers: {Authorization: 'Bearer ' + jwt}});
+            console.log("Getuser:", response.data[0]);
+            setUser(response.data[0]);
+        }catch{
+      
+        }        
     }
 
     
@@ -36,22 +44,25 @@ const ProfilePage = () => {
         <div className="title-bar">
             <body>
                 <div>
-                    <h1> {userProfile.username} Page </h1>
+                    <h1> {user.first_name} Page </h1>
                 </div>
                 <div>
-                    <h2> {userProfile.aboutme} </h2>
+                    <h2> About me {userProfile.aboutme} </h2>
                 </div>
                 <div>
-                    <h2> {userProfile.genres} </h2>
+                    <h2> Genres I like! {userProfile.genres} </h2>
                 </div>
                 <div>
-                    <h2> {userProfile.instruments} </h2>
+                    <h2> Instrments I play {userProfile.instruments} </h2>
                 </div>
                 <div>
-                    <h2> {userProfile.influences} </h2>
+                    <h2> My influences {userProfile.influences} </h2>
                 </div>
             </body>
-        </div>
+            <div>
+                <VideoPlayer/>
+            </div>            
+        </div>        
     )
 }
 

@@ -39,7 +39,12 @@ const NavBar = ({ user }) => {
                         <React.Fragment>
                             <div>
                                 <li>
-                                    <Link to="/logout">Logout</Link>
+                                    <Link to="/logout">Logout</Link>                                    
+                                </li>
+                            </div>
+                            <div>
+                                <li>
+                                    <Link to="/search">Search</Link>
                                 </li>
                             </div>
                         </React.Fragment>

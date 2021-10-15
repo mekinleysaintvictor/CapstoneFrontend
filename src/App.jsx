@@ -27,11 +27,11 @@ class App extends Component {
 
     }catch{
 
-      const refreshToken = localStorage.getItem("refreshToken");
-      let response = axios.post("http://127.0.0.1:8000/api/auth/login/refresh", refreshToken);
-      console.log("Refresh", response);
-      const user = jwtDecode(response);
-      this.setState( { user });
+      // const refreshToken = localStorage.getItem("refreshToken");
+      // let response = axios.post("http://127.0.0.1:8000/api/auth/login/refresh", refreshToken);
+      // console.log("Refresh", response);
+      // const user = jwtDecode(response);
+      // this.setState( { user });
     }
   }
 
