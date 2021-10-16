@@ -70,6 +70,14 @@ const EditProfile = () => {
                     </label>
                 </div>
                 <div>
+                    <label>
+                        Video:
+                        <div>
+                            <input type='text' placeHolder="Video ID goes here!"name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
+                        </div>                        
+                    </label>
+                </div>
+                <div>
                     <div>
                         <button type="submit" className="btn">Save</button>
                     </div>

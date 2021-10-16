@@ -14,6 +14,7 @@ import { Component } from 'react';
 import ProfilePage from './components/Profile/Profile';
 import EditProfile from './components/EditProfile/EditProfile';
 import Musician from './components/Musician/Musician';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   state = { }
@@ -37,7 +38,6 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <TitleBar/>
           <NavBar user={user}/>
           <div>
             <Switch>

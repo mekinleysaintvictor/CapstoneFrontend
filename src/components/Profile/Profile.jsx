@@ -48,7 +48,8 @@ const ProfilePage = (props) => {
     // Make the api to get the user object from the database (send the jwt to the protected endpoint)
 
     return(
-        <div className="title-bar">
+        <React.Fragment>
+            <div className="title-bar">
             <body>
                 <div>
                     <h1> Welcome to {user.first_name}'s Profile </h1>
@@ -66,10 +67,20 @@ const ProfilePage = (props) => {
                     <h2> My influences: {userProfile.influences} </h2>
                 </div>
             </body>
-            <div>
-                <VideoPlayer/>
-            </div>            
-        </div>        
+                <div className="">
+                        {userProfile.video == 'None' || null ? (                            
+                                    <h1>Post a Video!</h1>                                   
+                            ):(                       
+                                <div className="right floated">
+                                    <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
+                                        src={`https://www.youtube.com/embed/${userProfile.video}/`}
+                                        frameBorder="0">
+                                    </iframe>
+                                </div> 
+                        )}
+                </div>                           
+            </div>
+        </React.Fragment>                
     )
 }
 
