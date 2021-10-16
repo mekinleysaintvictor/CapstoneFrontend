@@ -36,7 +36,7 @@ const RegisterForm = () => {
                     <label className="col-sm-10">
                         Username:
                         <div>
-                            <input type='text' name='username' onChange={handleChange} value={formValues.username} required={true}/>
+                            <input type='text' className="form-control" name='username' onChange={handleChange} value={formValues.username} required={true}/>
                         </div>                        
                     </label>
                 </div>
@@ -44,7 +44,7 @@ const RegisterForm = () => {
                     <label>
                         Password:
                         <div className="col-sm-10">
-                            <input type='password' name='password' onChange={handleChange} value={formValues.password} required={true}/>
+                            <input type='password' className="form-control" name='password' onChange={handleChange} value={formValues.password} required={true}/>
                         </div>                        
                     </label>
                 </div>
@@ -52,7 +52,7 @@ const RegisterForm = () => {
                     <label>
                         Confirm Password:
                         <div className="col-sm-10">
-                            <input type='password' name='password2' onChange={handleChange} value={formValues.password2} required={true}/>
+                            <input type='password' className="form-control" name='password2' onChange={handleChange} value={formValues.password2} required={true}/>
                         </div>                        
                     </label>
                 </div>
@@ -60,7 +60,7 @@ const RegisterForm = () => {
                     <label>
                         Email:
                         <div className="col-sm-10">
-                            <input type='email' name='email' onChange={handleChange} value={formValues.email} required={true}/>
+                            <input type='email' className="form-control" name='email' onChange={handleChange} value={formValues.email} required={true}/>
                         </div>                        
                     </label>
                 </div>
@@ -68,7 +68,7 @@ const RegisterForm = () => {
                     <label>
                         First Name:
                         <div className="col-sm-10">
-                            <input type='text' name='first_name' onChange={handleChange} value={formValues.first_name} required={true}/>
+                            <input type='text' className="form-control" name='first_name' onChange={handleChange} value={formValues.first_name} required={true}/>
                         </div>                        
                     </label>
                 </div>
@@ -76,7 +76,7 @@ const RegisterForm = () => {
                     <label>
                         Last Name:
                         <div className="col-sm-10">
-                            <input type='text' name='last_name' onChange={handleChange} value={formValues.last_name} required={true}/>
+                            <input type='text' className="form-control" name='last_name' onChange={handleChange} value={formValues.last_name} required={true}/>
                         </div>                        
                     </label>
                 </div>

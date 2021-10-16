@@ -34,7 +34,7 @@ const LoginForm = () => {
                     <label className="col-sm-10">
                         Username:
                         <div>
-                            <input type='text' name='username' onChange={handleChange} value={formValues.username} required={true}/>
+                            <input type='text' className="form-control" name='username' onChange={handleChange} value={formValues.username} required={true}/>
                         </div>
                     </label>
                 </div>
@@ -42,7 +42,7 @@ const LoginForm = () => {
                     <label>
                         Password:
                         <div className="col-sm-10">
-                            <input type='password' name='password' onChange={handleChange} value={formValues.password} required={true}/>
+                            <input type='password' className="form-control" name='password' onChange={handleChange} value={formValues.password} required={true}/>
                         </div>
                     </label>
                 </div>

@@ -1,11 +1,7 @@
 import React from "react";
 import useForm from "../CustomForm/CustomForm";
 import axios from "axios";
-import jwtDecode from 'jwt-decode'; //added here for invalid token specified
-import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { Form, FormGroup, FormControl, Col, Row } from "react-bootstrap";
-
 
 const EditProfile = () => {
     const { formValues, handleChange, handleSubmit } = useForm(edit);
@@ -53,7 +49,7 @@ const EditProfile = () => {
                     <label>
                         Influences:
                         <div>
-                            <input type='text' placeHolder="Who inspires you?" name='influences' onChange={handleChange} value={formValues.influences} required={false}/>
+                            <input type='text' className="form-control" placeHolder="Who inspires you?" name='influences' onChange={handleChange} value={formValues.influences} required={false}/>
                         </div>                        
                     </label>
                 </div>
@@ -61,7 +57,7 @@ const EditProfile = () => {
                     <label>
                         Genres:
                         <div>
-                            <input type='text' placeHolder="Rock, pop, hip-hop?" name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
+                            <input type='text' className="form-control" placeHolder="Rock, pop, hip-hop?" name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
                         </div>                        
                     </label>
                 </div>
@@ -69,7 +65,7 @@ const EditProfile = () => {
                     <label>
                         Video:
                         <div>
-                            <input type='text' placeHolder="Video ID goes here!"name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
+                            <input type='text' className="form-control" placeHolder="Video ID goes here!"name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
                         </div>                        
                     </label>
                 </div>

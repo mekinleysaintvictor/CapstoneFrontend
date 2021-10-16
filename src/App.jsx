@@ -17,7 +17,7 @@ import Musician from './components/Musician/Musician';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
 import FooterBootstrap from './components/FooterBootstrap/FooterBootstrap';
-// import './App.css';
+import './App.css';
 
 
 class App extends Component {

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import VideoPlayer from "../MusicVideo/MusicVideo";
 import axios from 'axios';
 
-const ProfilePage = (props) => {
+const ProfilePage = () => {
 
     const [user, setUser] = useState({});
     const [userProfile, setUserProfile] = useState({}); //contains, aboutMe, genres, influences, instruments
@@ -49,8 +48,7 @@ const ProfilePage = (props) => {
 
     return(
         <React.Fragment>
-            <div className="title-bar">
-            <body>
+            <div className="title-bar">         
                 <div>
                     <h1> Welcome to {user.first_name}'s Profile </h1>
                 </div>
@@ -66,7 +64,7 @@ const ProfilePage = (props) => {
                 <div>
                     <h2> My influences: {userProfile.influences} </h2>
                 </div>
-            </body>
+            
                 <div className="">
                         {userProfile.video == 'None' || null ? (                            
                                     <h1>Post a Video!</h1>                                   
@@ -78,7 +76,7 @@ const ProfilePage = (props) => {
                                     </iframe>
                                 </div> 
                         )}
-                </div>                           
+                </div>                                        
             </div>
         </React.Fragment>                
     )
