@@ -65,7 +65,7 @@ const EditProfile = () => {
                     <label>
                         Video:
                         <div>
-                            <input type='text' className="form-control" placeHolder="Video ID goes here!"name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
+                            <input type='text' className="form-control" placeHolder="Video ID goes here!"name='video' onChange={handleChange} value={formValues.video} required={false}/>
                         </div>                        
                     </label>
                 </div>

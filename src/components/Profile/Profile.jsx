@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { Col } from "react-bootstrap";
+import './Profile.css'; 
 
 const ProfilePage = () => {
 
@@ -48,36 +50,61 @@ const ProfilePage = () => {
 
     return(
         <React.Fragment>
-            <div className="title-bar">         
-                <div>
-                    <h1> Welcome to {user.first_name}'s Profile </h1>
+                <div class="container">
+                    <div className="row"></div>
+                    <div class="row justify-content-between">
+                        <div class="col-4">
+                        <div className="card text-white bg-dark mb-3">
+                                <div className="card-header">Welcome to {user.first_name}'s Profile</div>
+                                <div className="card-body">
+                                    <h5 class="card-title">About Me</h5>
+                                    <p class="card-text">
+                                        Instruments I Play: {userProfile.instruments}
+                                        </p>
+                                    <p>
+                                        My influences: {userProfile.influences}
+                                    </p>
+                                    <p>
+                                        Genres I like: {userProfile.genres}
+                                    </p>
+                                    <p>
+                                        Quick Bio: {userProfile.aboutMe}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div className="">
+                            {userProfile.video == 'None' || null ? (                            
+                                        <h1>Post a Video!</h1>                                   
+                                ):(                       
+                                    <div className="right floated">
+                                        <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
+                                            src={`https://www.youtube.com/embed/${userProfile.video}/`}
+                                            frameBorder="0">
+                                        </iframe>
+                                    </div> 
+                            )}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                              
+                        </div>
+                    </div>
+                    
                 </div>
-                <div>
-                    <h2> About me: {userProfile.aboutMe} </h2>
-                </div>
-                <div>
-                    <h2> Genres I like: {userProfile.genres} </h2>
-                </div>
-                <div>
-                    <h2> Instrments I play: {userProfile.instruments} </h2>
-                </div>
-                <div>
-                    <h2> My influences: {userProfile.influences} </h2>
-                </div>
-            
-                <div className="">
-                        {userProfile.video == 'None' || null ? (                            
-                                    <h1>Post a Video!</h1>                                   
-                            ):(                       
-                                <div className="right floated">
-                                    <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
-                                        src={`https://www.youtube.com/embed/${userProfile.video}/`}
-                                        frameBorder="0">
-                                    </iframe>
-                                </div> 
-                        )}
-                </div>                                        
-            </div>
         </React.Fragment>                
     )
 }
