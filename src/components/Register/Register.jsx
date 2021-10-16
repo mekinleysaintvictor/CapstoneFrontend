@@ -30,63 +30,64 @@ const RegisterForm = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
+        <div className="d-flex container justify-content-center align-items-center">
+            <form className="form-group" onSubmit={handleSubmit}>
+                <div className = "row mb-3">
+                    <label className="col-sm-10">
                         Username:
                         <div>
                             <input type='text' name='username' onChange={handleChange} value={formValues.username} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         Password:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='password' name='password' onChange={handleChange} value={formValues.password} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         Confirm Password:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='password' name='password2' onChange={handleChange} value={formValues.password2} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         Email:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='email' name='email' onChange={handleChange} value={formValues.email} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         First Name:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='text' name='first_name' onChange={handleChange} value={formValues.first_name} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         Last Name:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='text' name='last_name' onChange={handleChange} value={formValues.last_name} required={true}/>
                         </div>                        
                     </label>
                 </div>
-                <div>
-                    <div>
-                        <button type="submit" className="btn">Register</button>
+                <div className="row">
+                    <div className="col-sm-10 col-auto">
+                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button className="btn btn-secondary" onClick={handleRoute}>Cancel</button>
                     </div>
                 </div>
                 <div>
-                    <button className="btn" onClick={handleRoute}>Cancel</button>
+                    
                 </div>
             </form>
         </div>

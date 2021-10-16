@@ -49,7 +49,7 @@ const LoginForm = () => {
                 <div className="row">
                     <div className="col-sm-10 col-auto">
                         <button type="submit" className="btn btn-primary">Login</button>
-                        <button className="btn btn-secondary" onClick={handleRoute}>Register</button>
+                        <button className="btn btn-info" onClick={handleRoute}>Register</button>
                     </div>
                 </div>
             </form>
