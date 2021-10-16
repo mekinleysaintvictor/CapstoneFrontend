@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import useForm from "../CustomForm/CustomForm";
 import { useHistory } from "react-router";
+import './Login.css';
 
 const LoginForm = () => {
     const { formValues, handleChange, handleSubmit } = useForm(loginUser);
@@ -27,29 +28,29 @@ const LoginForm = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
+        <div div className="d-flex container justify-content-center align-items-center">
+            <form className="form-group" onSubmit={handleSubmit}>
+                <div className = "row mb-3">
+                    <label className="col-sm-10">
                         Username:
                         <div>
                             <input type='text' name='username' onChange={handleChange} value={formValues.username} required={true}/>
                         </div>
                     </label>
                 </div>
-                <div>
+                <div className = "row mb-3">
                     <label>
                         Password:
-                        <div>
+                        <div className="col-sm-10">
                             <input type='password' name='password' onChange={handleChange} value={formValues.password} required={true}/>
                         </div>
                     </label>
                 </div>
-                <div>
-                    <button type="submit" className="btn">Login</button>
-                </div>
-                <div>
-                    <button className="btn" onClick={handleRoute}>Register</button>
+                <div className="row">
+                    <div className="col-sm-10 col-auto">
+                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button className="btn btn-secondary" onClick={handleRoute}>Register</button>
+                    </div>
                 </div>
             </form>
         </div>
