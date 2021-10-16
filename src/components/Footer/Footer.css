@@ -1,0 +1,12 @@
+.page-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 10px 0 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.footer-copyright {
+    color: #666;
+    /* padding: 40px 0; */
+}

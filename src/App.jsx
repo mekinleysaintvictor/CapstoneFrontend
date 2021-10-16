@@ -15,6 +15,8 @@ import ProfilePage from './components/Profile/Profile';
 import EditProfile from './components/EditProfile/EditProfile';
 import Musician from './components/Musician/Musician';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/Footer/Footer';
+
 
 class App extends Component {
   state = { }
@@ -64,6 +66,7 @@ class App extends Component {
               <Route path="/page/:id" component={Musician}/>
               <Route path="/" exact component={HomePage}/>
             </Switch>
+            <Footer/>
           </div>
         </div>
       </div>
