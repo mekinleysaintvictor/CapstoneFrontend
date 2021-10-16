@@ -16,6 +16,8 @@ import EditProfile from './components/EditProfile/EditProfile';
 import Musician from './components/Musician/Musician';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer';
+import FooterBootstrap from './components/FooterBootstrap/FooterBootstrap';
+// import './App.css';
 
 
 class App extends Component {
@@ -66,8 +68,8 @@ class App extends Component {
               <Route path="/page/:id" component={Musician}/>
               <Route path="/" exact component={HomePage}/>
             </Switch>
-            <Footer/>
-          </div>
+            {/* <Footer/> */}
+          </div>          
         </div>
       </div>
     );

@@ -3,7 +3,8 @@
     color: #ccc;
     padding: 10px 0 10px;
     width: 100%;
-    position: fixed;
+    position: sticky;
+
     bottom: 0;
 }
 .footer-copyright {

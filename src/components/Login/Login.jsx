@@ -28,7 +28,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div div className="d-flex container justify-content-center align-items-center">
+        <div className="d-flex container justify-content-center align-items-center">
             <form className="form-group" onSubmit={handleSubmit}>
                 <div className = "row mb-3">
                     <label className="col-sm-10">

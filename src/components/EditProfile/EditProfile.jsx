@@ -4,6 +4,8 @@ import axios from "axios";
 import jwtDecode from 'jwt-decode'; //added here for invalid token specified
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import { Form, FormGroup, FormControl, Col, Row } from "react-bootstrap";
+
 
 const EditProfile = () => {
     const { formValues, handleChange, handleSubmit } = useForm(edit);
@@ -35,29 +37,23 @@ const EditProfile = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        About Me:
-                        <div>
-                            <input type='text' name='aboutMe' onChange={handleChange} value={formValues.aboutMe} required={false}/>
-                        </div>                        
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Instruments:
-                        <div>
-                            <input type='text' name='instruments' onChange={handleChange} value={formValues.instruments} required={false}/>
-                        </div>                        
-                    </label>
+        <div className="d-flex container justify-content-center align-items-center">
+            <form className="form-group" onSubmit={handleSubmit}>
+                <div className="form-row">
+                    <div className="col">
+                        <label>
+                            Instruments:
+                            <div>
+                                <input type='text' className="form-control" placeHolder="Guitar, piano, drums etc." name='instruments' onChange={handleChange} value={formValues.instruments} required={false}/>
+                            </div>                        
+                        </label>
+                    </div>
                 </div>
                 <div>
                     <label>
                         Influences:
                         <div>
-                            <input type='text' name='influences' onChange={handleChange} value={formValues.influences} required={false}/>
+                            <input type='text' placeHolder="Who inspires you?" name='influences' onChange={handleChange} value={formValues.influences} required={false}/>
                         </div>                        
                     </label>
                 </div>
@@ -65,7 +61,7 @@ const EditProfile = () => {
                     <label>
                         Genres:
                         <div>
-                            <input type='text' name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
+                            <input type='text' placeHolder="Rock, pop, hip-hop?" name='genres' onChange={handleChange} value={formValues.genres} required={false}/>
                         </div>                        
                     </label>
                 </div>
@@ -77,13 +73,22 @@ const EditProfile = () => {
                         </div>                        
                     </label>
                 </div>
+                <div className="form-group">
+                    <label>
+                        About Me:
+                        <div>
+                            <textarea type='text' rows="5" placeHolder="Tell us about yourself." name='aboutMe' onChange={handleChange} value={formValues.aboutMe} required={false}/>
+                        </div>                        
+                    </label>
+                </div>
                 <div>
                     <div>
-                        <button type="submit" className="btn">Save</button>
+                        <button type="submit" className="btn btn-primary">Save</button>
+                        <button className="btn btn-danger" onClick={handleRoute}>Cancel</button>
                     </div>
                 </div>
                 <div>
-                    <button className="btn" onClick={handleRoute}>Cancel</button>
+                    
                 </div>
             </form>
         </div>
