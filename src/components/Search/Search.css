@@ -1,7 +1,27 @@
-body{
-  background-image: url(/src/images/musicfriend2.jpg);
-}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:nth-child(odd){background-color: #ddd;}
+  
+  /* #customers tr:hover {background-color: #ddd;} */
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #202523;
+    color: white;
+  }
 
-table td{
-  color: black;
+#search input {
+    margin-top: 50px;
 }

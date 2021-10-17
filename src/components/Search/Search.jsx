@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-import FontAwesome from "react-fontawesome";
-import Musician from "../Musician/Musician";
+import './Search.css';
 
 const Search = () => {
     const [musicians, setMusicians] = useState([]);                                     //[APIData, setAPIData]
@@ -38,8 +36,8 @@ const Search = () => {
                 <input placeholder="Search..." onChange={(e) => searchItems(e.target.value)}/>
                 <i className="fa fa-search"></i>
             </div>
-            <table className="table text-white table-bordered">
-                <thead className="text-black">
+            <table id="customers" >
+                <thead >
                     <tr>
                         <th>About Me</th>
                         <th>Genres</th>

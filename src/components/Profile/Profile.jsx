@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Profile.css'; 
-import Musician from "../Musician/Musician";
 
 const ProfilePage = () => {
 
