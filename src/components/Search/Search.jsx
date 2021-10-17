@@ -39,13 +39,14 @@ const Search = () => {
             <div>
                 <input placeholder="Search..." onChange={(e) => searchItems(e.target.value)}/>
             </div>
-            <table>
+            <table className="table text-white table-bordered">
                 <thead>
                     <tr>
                         <th>About Me</th>
                         <th>Genres</th>
                         <th>Influences</th>
                         <th>Instruments</th>
+                        <th>Click Me!</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,7 +58,7 @@ const Search = () => {
                                     <td>{item.genres}</td>
                                     <td>{item.influences}</td>
                                     <td>{item.instruments}</td>  
-                                    <Link to={`/page/${item.id}`}>Details</Link>                              
+                                    <Link to={`/page/${item.id}`}>Details</Link>                           
                                 </tr>
                             )
                         })

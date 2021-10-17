@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Col } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './Profile.css'; 
 
 const ProfilePage = () => {
@@ -75,8 +76,8 @@ const ProfilePage = () => {
                         </div>
                         <div class="col-6">
                             <div className="">
-                            {userProfile.video == 'None' || null ? (                            
-                                        <h1>Post a Video!</h1>                                   
+                            {userProfile.video == 'None' || null ? (                                                                                       
+                                    <Nav.Link as={Link} to="/editprofile"><h1>Post A Video!</h1></Nav.Link>                                   
                                 ):(                       
                                     <div className="right floated">
                                         <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
