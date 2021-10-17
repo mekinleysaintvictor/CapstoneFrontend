@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Profile.css'; 
+import Musician from "../Musician/Musician";
 
 const ProfilePage = () => {
 

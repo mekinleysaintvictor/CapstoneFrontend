@@ -2,20 +2,35 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-const Musician = () => {
+const Musician = (props) => {
 
     const [musician, setMusician] = useState([]);
+    const[otherUser, setOtherUser] = useState([]);
     const { id } = useParams();
-    
+
     useEffect(async() => {
         await axios.get(`http://127.0.0.1:8000/api/musicians/${id}/`)
         .then((res) => {
             setMusician(res.data[0]);
-            console.log(res.data);
+            console.log("Musician",res.data);
         })
         .catch((err) => console.log(err))
         console.log("Error:")
     }, []);
+
+    useEffect(() => {
+        getUserName();
+    }, [musician]);
+
+    async function getUserName(){
+        try{
+        const response = await axios.get(`http://127.0.0.1:8000/api/musicians/${musician.user_id}/user/`);
+        setOtherUser(response.data[0]);
+        console.log("Other User:", response.data[0]);
+        }catch{
+
+        }
+    }
 
     return(
         <React.Fragment>
@@ -25,7 +40,7 @@ const Musician = () => {
                     <div class="row justify-content-between">
                         <div class="col-4">
                         <div className="card text-white bg-dark mb-3">
-                                <div className="card-header">Welcome to {}'s Profile</div>
+                                <div className="card-header">Welcome to {otherUser.username}'s Profile</div>
                                 <div className="card-body">
                                     <h5 class="card-title">About Me</h5>
                                     <p class="card-text">

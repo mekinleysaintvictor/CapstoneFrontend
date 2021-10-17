@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from "react";
-import { useHistory } from "react-router";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import FontAwesome from "react-fontawesome";
+import Musician from "../Musician/Musician";
 
 const Search = () => {
     const [musicians, setMusicians] = useState([]);                                     //[APIData, setAPIData]
     const [filteredMusicians, setFilteredMusicians] = useState([]);                     //[filteredResults]
-    const [searchInput, setSearchInput] = useState('');     
-    const history = useHistory();                            //[searchInput, setSearchInput]
+    const [searchInput, setSearchInput] = useState('');                                //[searchInput, setSearchInput]
 
     useEffect(() => {
         axios.get("http://127.0.0.1:8000/api/musicians/all/")
@@ -32,9 +31,6 @@ const Search = () => {
         }
     }
 
-    const handleRoute = () => {
-        history.push(`/page:id/`);
-    }
 
     return(
         <React.Fragment>
