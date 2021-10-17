@@ -8,7 +8,7 @@ function FooterBootstrap () {
             <Navbar fixed='bottom' bg="dark" variant ="dark">
                 <Container fluid>
                     <Navbar.Text className="justify-content-center">
-                        Artwork by 8pxl: https://8pxl.co/
+                        Created by: MeKinley Saint Victor
                     </Navbar.Text>                  
                     <Navbar.Text className="justify-content-end">
                         © 2021 Copyright

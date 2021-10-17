@@ -1,7 +1,6 @@
 import React from "react";
 import useForm from "../CustomForm/CustomForm";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 const RegisterForm = () => {
@@ -20,8 +19,7 @@ const RegisterForm = () => {
             window.location = '/login';
         }
         catch{
-            alert("Invalid info.");
-            console.log("Unsuccess");
+            alert("Invalid password.");
         }
     }
 

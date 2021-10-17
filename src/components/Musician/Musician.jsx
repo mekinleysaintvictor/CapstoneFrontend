@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 
-const Musician = (props) => {
+const Musician = () => {
 
     const [musician, setMusician] = useState([]);
     const[otherUser, setOtherUser] = useState([]);
@@ -68,6 +68,7 @@ const Musician = (props) => {
                                             src={`https://www.youtube.com/embed/${musician.video}/`}
                                             frameBorder="0">
                                         </iframe>
+                                        <h1>Check out my video!</h1>
                                     </div> 
                             )}
                             </div>

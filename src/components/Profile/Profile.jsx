@@ -52,15 +52,15 @@ const ProfilePage = () => {
 
     return(
         <React.Fragment>
-                <div class="container">
+                <div className="container">
                     <div className="row"></div>
-                    <div class="row justify-content-between">
-                        <div class="col-4">
+                    <div className="row justify-content-between">
+                        <div className="col-4">
                         <div className="card text-white bg-dark mb-3">
                                 <div className="card-header">Welcome to {user.first_name}'s Profile</div>
                                 <div className="card-body">
-                                    <h5 class="card-title">About Me</h5>
-                                    <p class="card-text">
+                                    <h5 className="card-title">About Me</h5>
+                                    <p className="card-text">
                                         Instruments I Play: {userProfile.instruments}
                                         </p>
                                     <p>
@@ -75,7 +75,7 @@ const ProfilePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div className="col-6">
                             <div className="">
                             {userProfile.video == 'None' || null ? (                                                                                       
                                     <Nav.Link as={Link} to="/editprofile"><h1>Post A Video!</h1></Nav.Link>                                   
@@ -85,7 +85,8 @@ const ProfilePage = () => {
                                             src={`https://www.youtube.com/embed/${userProfile.video}/`}
                                             frameBorder="0">
                                         </iframe>
-                                    </div> 
+                                        <h1>Check out my video!</h1>
+                                    </div>                                   
                             )}
                             </div>
                         </div>

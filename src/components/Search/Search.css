@@ -1,4 +1,7 @@
 body{
-    background-image: url(/src/images/musicfriend2.jpg);
-  }
-  
+  background-image: url(/src/images/musicfriend2.jpg);
+}
+
+table td{
+  color: black;
+}
