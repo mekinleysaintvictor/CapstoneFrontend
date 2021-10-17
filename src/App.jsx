@@ -7,7 +7,6 @@ import { Redirect } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import NavBar from './components/NavBar/NavBar';
 import Logout from './components/Logout/Logout';
-import axios from 'axios';
 import Search from './components/Search/Search';
 import jwtDecode from 'jwt-decode';
 import { Component } from 'react';

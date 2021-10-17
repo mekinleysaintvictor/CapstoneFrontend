@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
+import FontAwesome from "react-fontawesome";
 
 const Search = () => {
     const [musicians, setMusicians] = useState([]);                                     //[APIData, setAPIData]
@@ -38,9 +40,10 @@ const Search = () => {
         <React.Fragment>
             <div>
                 <input placeholder="Search..." onChange={(e) => searchItems(e.target.value)}/>
+                <i className="fa fa-search"></i>
             </div>
             <table className="table text-white table-bordered">
-                <thead>
+                <thead className="text-black">
                     <tr>
                         <th>About Me</th>
                         <th>Genres</th>

@@ -1,9 +1,14 @@
 import React from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Container, Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBar = ({ user }) => {
 
+    async function logoutUser(){
+        localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
+        window.location = '/';
+    }
 
     return (
         <Navbar bg="dark" variant ="dark">
@@ -26,7 +31,7 @@ const NavBar = ({ user }) => {
                                                           
                                 <Nav.Link as={Link} to="/search">Search</Nav.Link>                                
                                                                                                
-                                <Nav.Link as={Link} to="/logout">Logout</Nav.Link>                                
+                                <Button variant="outline-secondary" onClick={logoutUser}>Logout</Button>                                
                             </Nav>                        
                     }            
                 
