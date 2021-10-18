@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { Component, useState, useEffect } from "react";
+import reactDom from "react-dom";
 import axios from 'axios';
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import './Profile.css'; 
+import './Profile.css';
+import Reccomend from "../Reccomendations/Reccomend";
 
 const ProfilePage = () => {
 
@@ -80,7 +82,7 @@ const ProfilePage = () => {
                                     <Nav.Link as={Link} to="/editprofile"><h1>Post A Video!</h1></Nav.Link>                                   
                                 ):(                       
                                     <div className="right floated">
-                                        <iframe class="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
+                                        <iframe className="embed-responsive-item" id="ytplayer" type="text/html" width="640" height="360"
                                             src={`https://www.youtube.com/embed/${userProfile.video}/`}
                                             frameBorder="0">
                                         </iframe>
@@ -91,6 +93,7 @@ const ProfilePage = () => {
                         </div>
                     </div>
                 </div>
+            <Reccomend user1={userProfile}></Reccomend>
         </React.Fragment>                
     )
 }

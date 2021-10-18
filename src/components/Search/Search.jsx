@@ -32,7 +32,7 @@ const Search = () => {
 
     return(
         <React.Fragment>
-            <div>
+            <div id="search" className="">
                 <input placeholder="Search..." onChange={(e) => searchItems(e.target.value)}/>
                 <i className="fa fa-search"></i>
             </div>
