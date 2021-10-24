@@ -67,7 +67,7 @@ class App extends Component {
               <Route path="/page/:id" component={Musician}/>
               <Route path="/" exact component={HomePage}/>
             </Switch>
-            <FooterBootstrap/>
+            <Footer/>
           </div>          
         </div>
       </div>

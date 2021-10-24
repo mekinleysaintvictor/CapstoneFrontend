@@ -5,6 +5,13 @@
     text-shadow: 2px 2px 4px #000000;
 }
 
+.container h2 {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
 .container img{
     border-radius: 50%;
     width: 300px;

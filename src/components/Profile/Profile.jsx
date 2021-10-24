@@ -5,6 +5,7 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Profile.css';
 import Reccomend from "../Reccomendations/Reccomend";
+import BandRequest from "../BandRequest/BandRequest";
 
 const ProfilePage = () => {
 
@@ -91,9 +92,21 @@ const ProfilePage = () => {
                             )}
                             </div>
                         </div>
+                        <div id="cloud" className="row">
+                            <div className="col-4 ">
+                                {userProfile.soundCloud == 'None' || null ? (
+                                    <Nav.Link as={Link} to="/editprofile"><h1>Post A Soundcloud Track here!</h1></Nav.Link>
+                                ):(
+                                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                        src={`https://w.soundcloud.com/player/?url=${user.soundCloud}&amp;`}>
+                                    </iframe>
+                                )}                               
+                            </div>
+                        </div>
                     </div>
                 </div>
             <Reccomend user1={userProfile}></Reccomend>
+            <BandRequest/>
         </React.Fragment>                
     )
 }

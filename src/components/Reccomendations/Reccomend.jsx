@@ -18,7 +18,7 @@ const Reccomend = ( { user1 } ) => {
 
     return ( 
         <React.Fragment>
-            <div id="rekt" className="conatiner">
+            <div id="" className="container">
                 <div className="row">
                     <div className="col-sm-3">
                         <div id="rect" >

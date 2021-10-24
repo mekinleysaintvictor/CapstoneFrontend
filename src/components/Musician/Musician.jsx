@@ -6,7 +6,7 @@ const Musician = () => {
 
     const [musician, setMusician] = useState([]);
     const[otherUser, setOtherUser] = useState([]);
-    const { id } = useParams();
+    let { id } = useParams();
 
     useEffect(async() => {
         await axios.get(`http://127.0.0.1:8000/api/musicians/${id}/`)
@@ -28,7 +28,7 @@ const Musician = () => {
         setOtherUser(response.data[0]);
         console.log("Other User:", response.data[0]);
         }catch{
-
+            console.log("GetUserName");
         }
     }
 
@@ -71,6 +71,17 @@ const Musician = () => {
                                         <h1>Check out my video!</h1>
                                     </div> 
                             )}
+                            </div>
+                        </div>
+                        <div id="cloud" className="row justify-content-start">
+                            <div className="col-4">
+                                {musician.soundCloud == 'None' || null ? (
+                                    <h1>This User Has Not Yet Posted A Trck!</h1>
+                                ):(
+                                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                                        src={`https://w.soundcloud.com/player/?url=${musician.soundCloud}&amp;`}>
+                                    </iframe>
+                                )}                               
                             </div>
                         </div>
                     </div>
