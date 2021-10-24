@@ -12,6 +12,7 @@ const ProfilePage = () => {
     const [user, setUser] = useState({});
     const [userProfile, setUserProfile] = useState({}); //contains, aboutMe, genres, influences, instruments
 
+
     useEffect(() => {
         getUserProfile();
     }, []);
@@ -19,6 +20,8 @@ const ProfilePage = () => {
     useEffect(() => {
         getUser();
     }, []);
+
+
 
     async function getUserProfile(){
         const refresh = localStorage.getItem("refreshToken");
@@ -48,7 +51,7 @@ const ProfilePage = () => {
         }        
     }
 
-    
+   
 
     // Make the api to get the user object from the database (send the jwt to the protected endpoint)
 
